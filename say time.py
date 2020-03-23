@@ -2,7 +2,6 @@ import vk_api
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 import random
 import datetime
-import pytz
 
 def main():
     vk_session = vk_api.VkApi(
