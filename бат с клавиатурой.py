@@ -52,12 +52,10 @@ def geo(toponym_to_find):
     # ... и выполняем запрос
 
     response = requests.get(map_api_server, params=map_params)
-    a = Image.open(BytesIO(response.content))
-    a = a.save("im.jpg")
     upload = vk_api.VkUpload(vk_session)
 
     photo = upload.photo(  # Подставьте свои данные
-        "im.jpg",
+        Image.open(BytesIO(response.content)),
         album_id=album_id,
         group_id=group_id
     )
@@ -102,6 +100,7 @@ def main():
                     random_id=random.randint(0, 2 ** 64),
                     keyboard=open('keyboard.json', "r", encoding="UTF-8").read()
                 )
+                n += 1
             else:
                 vk.messages.send(user_id=event.obj.message['from_id'],
                                  message=f"Это {city}. Что вы еще хотите увидеть?",
