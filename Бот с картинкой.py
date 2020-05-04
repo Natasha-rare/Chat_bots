@@ -5,6 +5,7 @@ import vk_api
 from random import randint
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 from auth_data import TOKEN, group_id, VK_USER, VK_PASS, album_id
+import sys
 
 def photo_id():
     login, password = VK_USER, VK_PASS
@@ -16,7 +17,6 @@ def photo_id():
         return
     vk = vk_session.get_api()
     response = vk.photos.get(album_id=album_id, group_id=group_id)
-    print(response)
     photo = response[randint(0, len(response) - 1)]
     return f"photo{photo['owner_id']}_{photo['photo_id']}"
 
