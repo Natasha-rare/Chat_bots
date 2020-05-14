@@ -1,29 +1,26 @@
-{"one_time": false,
-    "buttons": [
-        [{
-            "action": {
-                "type": "text",
-                "payload": "{\"button\": \"1\"}",
-                "label": "map"
-            },
-            "color": "positive"
-        }],
-        [{
-            "action": {
-                "type": "text",
-                "payload": "{\"button\": \"2\"}",
-                "label": "sat"
-            },
-            "color": "default"
+{
+  "one_time": false,
+  "buttons": [
+    [{
+      "action": {
+        "type": "text",
+        "label": "map"
+      },
+      "color": "positive"
+    },
+      {
+        "action": {
+          "type": "text",
+          "label": "sat"
         },
-            {
-                "action": {
-                    "type": "text",
-                    "payload": "{\"button\": \"3\"}",
-                    "label": "sat,skl"
-                },
-                "color": "default"
-            }
-        ]
-    ]
+        "color": "positive"
+      }],
+    [{
+      "action": {
+        "type": "text",
+        "label": "sat,skl"
+      },
+      "color": "default"
+    }]
+  ]
 }
